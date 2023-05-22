@@ -1,0 +1,39 @@
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package buoi4;
+
+   
+public class May {
+     protected String tenMay;
+    protected boolean daSuDung;
+
+    public May(String tenMay) {
+        this.tenMay = tenMay;
+        this.daSuDung = false;
+    }
+
+    public String getTenMay() {
+        return tenMay;
+    }
+
+    public void setTenMay(String tenMay) {
+        this.tenMay = tenMay;
+    }
+
+    public boolean isDaSuDung() {
+        return daSuDung;
+    }
+
+    public void setDaSuDung(boolean daSuDung) {
+        this.daSuDung = daSuDung;
+    }
+
+    public void hienThiThongTin() {
+        System.out.println("Tên máy: " + tenMay);
+        System.out.println("Trạng thái: " + (daSuDung ? "Đã sử dụng" : "Chưa sử dụng"));
+    }
+}
+
