@@ -1,0 +1,109 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package buoi4;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author ADMIN
+ */
+public class Main {
+    public static void main(String[] args) {
+        
+    
+     QuanLiPhongMay quanLiPhongMay = new QuanLiPhongMay();
+
+        // Thêm 5 máy chủ vào danh sách
+        MayChu mayChu1 = new MayChu("Server 1", "192.168.0.1");
+        MayChu mayChu2 = new MayChu("Server 2", "192.168.0.2");
+        MayChu mayChu3 = new MayChu("Server 3", "192.168.0.3");
+        MayChu mayChu4 = new MayChu("Server 4", "192.168.0.4");
+        MayChu mayChu5 = new MayChu("Server 5", "192.168.0.5");
+
+        quanLiPhongMay.themMayChu(mayChu1);
+        quanLiPhongMay.themMayChu(mayChu2);
+        quanLiPhongMay.themMayChu(mayChu3);
+        quanLiPhongMay.themMayChu(mayChu4);
+        quanLiPhongMay.themMayChu(mayChu5);
+
+        // Thêm 5 máy con vào danh sách
+        MayCon mayCon1 = new MayCon("PC 1", "Intel Core i5, 8GB RAM");
+        MayCon mayCon2 = new MayCon("PC 2", "Intel Core i7, 16GB RAM");
+        MayCon mayCon3 = new MayCon("PC 3", "AMD Ryzen 5, 12GB RAM");
+        MayCon mayCon4 = new MayCon("PC 4", "AMD Ryzen 7, 16GB RAM");
+        MayCon mayCon5 = new MayCon("PC 5", "Intel Core i9, 32GB RAM");
+
+        quanLiPhongMay.themMayCon(mayCon1);
+        
+        Scanner scanner = new Scanner(System.in);
+        int choice = 0;
+
+        while (choice != 5) {
+            System.out.println("------ MENU ------");
+            System.out.println("1. Them may chu");
+            System.out.println("2. Them may con");
+            System.out.println("3. Xoa may");
+            System.out.println("4. Xuat danh sach may");
+            System.out.println("5. Thoat");
+            System.out.print("Nhap lua chọn cua ban: ");
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Nhap ten may chu: ");
+                    scanner.nextLine();
+                    String tenMayChu = scanner.nextLine();
+                    System.out.print("Nhap dia chi IP: ");
+                    String ip = scanner.nextLine();
+
+                    MayChu mayChu = new MayChu(tenMayChu, ip);
+                    quanLiPhongMay.themMayChu(mayChu);
+                    System.out.println("Them may chu thanh cong!");
+                    break;
+
+                case 2:
+                    System.out.print("Nhap ten may con: ");
+                    scanner.nextLine();
+                    String tenMayCon = scanner.nextLine();
+                    System.out.print("Nhap cau hinh: ");
+                    String cauHinh = scanner.nextLine();
+
+                    MayCon mayCon = new MayCon(tenMayCon, cauHinh);
+                    quanLiPhongMay.themMayCon(mayCon);
+                    System.out.println("Them may con thanh cong!");
+                    break;
+
+                case 3:
+                    System.out.print("Nhap ten may can xoa: ");
+                    scanner.nextLine();
+                    String tenMay = scanner.nextLine();
+                    quanLiPhongMay.xoaMayChu(tenMay);
+                    quanLiPhongMay.xoaMayCon(tenMay);
+                    System.out.println("Xoa may thanh cong!");
+                    break;
+
+                case 4:
+                    quanLiPhongMay.hienThiDanhSachMayChu();
+                    quanLiPhongMay.hienThiDanhSachMayCon();
+                    break;
+
+                case 5:
+                    System.out.println("Cam on da su dung chuong trinh!");
+                    break;
+
+                default:
+                    System.out.println("Lua chon khong hop le!");
+                    break;
+            }
+
+            System.out.println();
+        }
+
+        scanner.close();
+        
+    }
+    }
+
