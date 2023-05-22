@@ -1,0 +1,28 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package buoi4;
+
+public class MayChu extends May {
+     private String ip;
+
+    public MayChu(String tenMay, String ip) {
+        super(tenMay);
+        this.ip = ip;
+    }
+
+    public String getIp() {
+        return ip;
+    }
+
+    public void setIp(String ip) {
+        this.ip = ip;
+    }
+
+    @Override
+    public void hienThiThongTin() {
+        super.hienThiThongTin();
+        System.out.println("IP: " + ip);
+    }
+}
