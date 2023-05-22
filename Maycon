@@ -1,0 +1,30 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package buoi4;
+
+public class MayCon extends May {
+     private String cauHinh;
+
+    public MayCon(String tenMay, String cauHinh) {
+        super(tenMay);
+        this.cauHinh = cauHinh;
+    }
+
+    public String getCauHinh() {
+        return cauHinh;
+    }
+
+    public void setCauHinh(String cauHinh) {
+        this.cauHinh = cauHinh;
+    }
+
+    @Override
+    public void hienThiThongTin() {
+        super.hienThiThongTin();
+        System.out.println("Cấu hình: " + cauHinh);
+    }
+
+}
+
