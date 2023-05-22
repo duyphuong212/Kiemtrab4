@@ -1,0 +1,67 @@
+# Kiemtrab4
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package buoi4;
+import java.util.ArrayList;
+/**
+ *
+ * @author ADMIN
+ */
+public class QuanLiPhongMay {
+
+/**
+ *
+ * @author ADMIN
+ */
+     private ArrayList<MayChu> danhSachMayChu;
+    private ArrayList<MayCon> danhSachMayCon;
+
+    public QuanLiPhongMay() {
+        danhSachMayChu = new ArrayList<>();
+        danhSachMayCon = new ArrayList<>();
+    }
+
+    public void themMayChu(MayChu mayChu) {
+        danhSachMayChu.add(mayChu);
+    }
+
+    public void themMayCon(MayCon mayCon) {
+        danhSachMayCon.add(mayCon);
+    }
+     public void xoaMayChu(String tenMay) {
+        for (MayChu mayChu : danhSachMayChu) {
+            if (mayChu.getTenMay().equals(tenMay)) {
+                danhSachMayChu.remove(mayChu);
+                break;
+            }
+        }
+    }
+
+    public void xoaMayCon(String tenMay) {
+        for (MayCon mayCon : danhSachMayCon) {
+            if (mayCon.getTenMay().equals(tenMay)) {
+                danhSachMayCon.remove(mayCon);
+                break;
+            }
+        }
+    }
+     public void hienThiDanhSachMayChu() {
+        System.out.println("Danh sách máy chủ:");
+        for (MayChu mayChu : danhSachMayChu) {
+            mayChu.hienThiThongTin();
+            System.out.println();
+        }
+    }
+
+    public void hienThiDanhSachMayCon() {
+        System.out.println("Danh sách máy con:");
+        for (MayCon mayCon : danhSachMayCon) {
+            mayCon.hienThiThongTin();
+            System.out.println();
+        }
+    }
+}
+
+
